@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import { cargarTareas } from './Post.js'; 
 
-function InputTareas() {
+function InputTareas({titulo}) {
   const [tarea, setTarea] = useState('');
-//   const [contador, setContador] = useState(0);
 
-  const handleInputChange = (e) => {
+  const inputChange = (e) => {
     setTarea(e.target.value);
   };
 
-  const handleAgregarClick = async () => {
+  const agregarClick = async () => {
     if (tarea.trim() === '') {
       alert('La tarea no puede estar vacía o contener solo espacios');
       return;
@@ -18,9 +17,6 @@ function InputTareas() {
     try {
       // Llamamos a la función guardarTarea que importamos
       await cargarTareas(tarea);
-
-      // Si la tarea se guarda correctamente, incrementamos el contador
-    //   setContador(contador + 1);
 
       // Limpia el input
       setTarea('');
@@ -34,8 +30,8 @@ function InputTareas() {
   return (
     <div className='container-inputs'>
       <form className='inp-btnAgregar' onSubmit={(e) => e.preventDefault()}>
-        <input className='crear-task' placeholder='Nueva Tarea' type='text' value={tarea} onChange={handleInputChange}/>
-        <button className='btn-tarea' type='button' onClick={handleAgregarClick}>Agregar</button>
+        <input className='crear-task' placeholder='Nueva Tarea' type='text' value={tarea} onChange={inputChange}/>
+        <button className='btn-tarea' type='button' onClick={agregarClick}>Agregar</button>
       </form>
       <div>
         <input className='contador' placeholder='0' type='text' />

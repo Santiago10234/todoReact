@@ -6,7 +6,7 @@ const eliminarTarea = async (id) => {
         method: 'DELETE',
       });
       
-      // Después de eliminar la tarea, volvemos a cargar las tareas actualizadas desde la API
+      // Carga las tareas actualizadas desde la API
       cargarTareas();
       console.log('Tarea eliminada correctamente');
     } catch (error) {
