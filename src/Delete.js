@@ -1,5 +1,5 @@
 const eliminarTarea = async (id) => {
-
+const apiUrl =  `http://localhost:3000/api/task/${id}`
     try {
       // Petición DELETE a la API para eliminar la tarea por su ID
       await fetch(apiUrl, {

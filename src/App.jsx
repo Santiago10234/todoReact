@@ -7,17 +7,13 @@ import cargarTareas from './Get'
 import Tareas from './Tareas'
 
 function App() {
-  const [count, setCount] = useState(0)
   const [listaTareas,setListaTareas] = useState([])
 
   useEffect(()=>{
     console.log("Entra");
     const traerTareas = async()=>{
-      console.log("Entra2");
       const tareasGuardadas = await cargarTareas()
-      console.log(tareasGuardadas);
       setListaTareas(tareasGuardadas)
-      console.log(tareasGuardadas);
     }
     traerTareas()
   },[])

@@ -26,7 +26,20 @@
   background-color: #242424;
 }
 .container-task{
+  padding: 10px;
   border: 1px solid;
   margin-top: 15px;
-  min-height: 600px;
+  min-height: 500px;
+}
+.tareas{
+  border: 1px solid;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  
+}
+.nombreTarea{
+  margin-left: 20px;
+  margin-right: 30px;
+
 }

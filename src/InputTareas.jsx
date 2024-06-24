@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import { cargarTareas } from './Post.js'; 
 
-function InputTareas({titulo}) {
+function InputTareas() {
+
+  const submit = (e) =>{
+    if (e.key === "Enter") {
+      agregarClick()
+    }
+  }
   const [tarea, setTarea] = useState('');
 
   const inputChange = (e) => {
@@ -20,17 +26,17 @@ function InputTareas({titulo}) {
 
       // Limpia el input
       setTarea('');
-
+      window.location.reload()
       console.log('Tarea guardada correctamente');
     } catch (error) {
-      console.error(error.message);
+      console.error(error);
     }
   };
 
   return (
     <div className='container-inputs'>
       <form className='inp-btnAgregar' onSubmit={(e) => e.preventDefault()}>
-        <input className='crear-task' placeholder='Nueva Tarea' type='text' value={tarea} onChange={inputChange}/>
+        <input onKeyDown={submit} className='crear-task' placeholder='Nueva Tarea' type='text' value={tarea} onChange={inputChange}/>
         <button className='btn-tarea' type='button' onClick={agregarClick}>Agregar</button>
       </form>
       <div>

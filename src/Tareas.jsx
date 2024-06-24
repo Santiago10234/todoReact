@@ -1,10 +1,10 @@
 const Tareas = ({titulo,completadas,eliminar})=>{
     return(
-        <>
-        <h2>{titulo}</h2>
-        <input type="checkbox"/>
-        <button onClick={eliminar} type="button">Eliminar</button>
-        </>
+        <div className="tareas">
+            <input type="checkbox"/>
+            <p className="nombreTarea">{titulo}</p>
+            <button onClick={eliminar} type="button">Eliminar</button>
+        </div>
     )
 }
 export default Tareas
