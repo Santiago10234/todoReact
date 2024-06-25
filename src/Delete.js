@@ -1,4 +1,4 @@
-const eliminarTarea = async (id) => {
+const EliminarTarea = async (id) => {
 const apiUrl =  `http://localhost:3000/api/task/${id}`
     try {
       // Petición DELETE a la API para eliminar la tarea por su ID
@@ -14,4 +14,4 @@ const apiUrl =  `http://localhost:3000/api/task/${id}`
     }
   };
   
-  export default eliminarTarea;
+  export default EliminarTarea;
