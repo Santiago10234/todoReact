@@ -25,7 +25,7 @@ function App() {
       <div className='container'>
         <TituloToDo/>
         <InputTareas contador={contador}/>
-        <ContenedorTareas mostrarTareas={listaTareas}/>
+        {listaTareas.length === 0 ? <p className='text'>No hay tareas</p>:<ContenedorTareas mostrarTareas={listaTareas}/>}
       </div>
     </div>
   )

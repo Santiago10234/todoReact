@@ -41,7 +41,8 @@ function InputTareas({contador}) {
         <input onKeyDown={submit} className='crear-task' placeholder='Nueva Tarea' type='text' value={tarea} onChange={inputChange}/>
         <button className='btn-tarea' type='button' onClick={agregarClick}>Agregar</button>
       </form>
-      <div>
+      <div className='contenedor-contador'>
+        <p className='parrafo'>Tareas completadas</p>
         <input className='contador' value={contador} type='text' />
       </div>
     </div>
