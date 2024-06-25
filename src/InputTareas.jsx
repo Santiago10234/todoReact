@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { cargarTareas } from './Post.js'; 
 
-function InputTareas() {
+function InputTareas({contador}) {
 
   const submit = (e) =>{
     if (e.key === "Enter") {
@@ -26,12 +26,14 @@ function InputTareas() {
 
       // Limpia el input
       setTarea('');
-      window.location.reload()
+     
       console.log('Tarea guardada correctamente');
     } catch (error) {
       console.error(error);
     }
   };
+
+  
 
   return (
     <div className='container-inputs'>
@@ -40,7 +42,7 @@ function InputTareas() {
         <button className='btn-tarea' type='button' onClick={agregarClick}>Agregar</button>
       </form>
       <div>
-        <input className='contador' placeholder='0' type='text' />
+        <input className='contador' value={contador} type='text' />
       </div>
     </div>
   );

@@ -7,7 +7,9 @@ const cargarTareas = async (tarea) => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ tarea: tarea.trim() })
+      body: JSON.stringify({ tarea: tarea.trim(),
+                             estado:false
+       })
     });
 
     if (!response.ok) {

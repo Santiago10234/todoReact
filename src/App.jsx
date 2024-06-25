@@ -8,21 +8,23 @@ import Tareas from './Tareas'
 
 function App() {
   const [listaTareas,setListaTareas] = useState([])
-
+  const [contador,setContador] = useState(0)
   useEffect(()=>{
     console.log("Entra");
     const traerTareas = async()=>{
       const tareasGuardadas = await cargarTareas()
+      const tareasRealizadas = tareasGuardadas.filter(tarea=>tarea.estado===true).length
+      setContador(tareasRealizadas)
       setListaTareas(tareasGuardadas)
     }
     traerTareas()
-  },[])
+  },[listaTareas])
 
   return (
     <div className='div-container'>
       <div className='container'>
         <TituloToDo/>
-        <InputTareas/>
+        <InputTareas contador={contador}/>
         <ContenedorTareas mostrarTareas={listaTareas}/>
       </div>
     </div>
